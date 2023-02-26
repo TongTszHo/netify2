@@ -8,62 +8,17 @@
     <link rel="stylesheet" type="text/css" href="../css/css1.css" />
 	<script src="../js/metamasklink.js"></script>
   <!--href to all the pages of this project-->
-  <script>
-      const url = "http://localhost/assignment/staff/post.php";
-      const formEl = document.querySelector("form");
-      formEl.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const formData = new FormData(formEl);
-        const formDataSerialized = Object.fromEntries(formData);
-        const jsonObject = {
-          ...formDataSerialized,
-          sendToSelf: formDataSerialized.sendToSelf ? true : false,
-        };
-        try {
-          const response = await fetch(url, {
-            method: "POST",
-            body: JSON.stringify(jsonObject),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          const json = await response.json();
-          console.log(json);
-        } catch (e) {
-          console.error(e);
-          alert("there as an error");
-        }
-      });
-    </script>
 </head>
 <body>
 
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<div class="shortcut-links">
-				<a href="../staff/post.html"><p><b>Posts</b></p></a>
-				<a href="../staff/scholarship.html"><p><b>Scholarship</b></p></a>
-				<a href="../staff/gamezone.html"><p><b>Game Zone</b></p></a>
-				<a href="../staff/studentdeals.html"><p><b>Student Deals</b></p></a>
-				<a href="../staff/leaderboard.html"><p><b>Leader Board</b></p></a>
-				<a href="../staff/metaverse.html"><p><b>Metaverse</b></p></a>
-      </div>
-</div>
-
-<div id="main">
   <!-- Note -->
-<nav class="flex-div">
-	<div class="left">
-      <button class="openbtn" onclick="openNav()">&#9776;</button>
-      <img src="../img/student.jpg" alt="student" width="200" height="50">
-	</div>
 	<div class="right">
 		<a href="../staff/post.html"><button class="openbtn">&#8962;</button></a>
 		<a href="#"><button class="openbtn">&#128498;</button></a>
 		<Button class="button-format">Create Post</Button>
-	</div>
-</nav>
+
 </div>
+</body>
 
 <script>
 function openNav() {
